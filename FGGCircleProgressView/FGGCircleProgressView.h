@@ -1,8 +1,8 @@
 //
-//  SDPieLoopProgressView.h
-//  SDProgressView
+//  FGGCircleProgressView.h
+//  FGGCircleProgressView
 //
-//  Created by 夏桂峰 on 15-2-20.
+//  Created by 夏桂峰 on 15/8/5.
 //  Copyright (c) 2015年 夏桂峰. All rights reserved.
 //
 
