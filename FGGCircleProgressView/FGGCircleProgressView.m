@@ -10,22 +10,27 @@
 
 @implementation FGGCircleProgressView
 
+//通过代码方式初始化
 - (id)initWithFrame:(CGRect)frame andProgressColor:(UIColor *)progressColor
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         self.progressColor=progressColor;
+        //默认进度环宽度为5
+        self.circleWidth=5.0;
     }
     return self;
 }
-
-- (void)setProgress:(CGFloat)progress
+//通过xib方式初始化
+-(id)initWithCoder:(NSCoder *)aDecoder
 {
-    _progress = progress;
-    
-    if (progress >= 0.0&&progress<=1.0)
-        [self setNeedsDisplay];
+    if(self=[super initWithCoder:aDecoder])
+    {
+        self.backgroundColor=[UIColor clearColor];
+        self.circleWidth=2.5;
+    }
+    return self;
 }
 
 - (void)drawRect:(CGRect)rect
@@ -48,7 +53,7 @@
     
     // 遮罩
     [[UIColor whiteColor] set];
-    CGFloat maskW = (radius - 10) * 2;
+    CGFloat maskW = (radius - self.circleWidth) * 2;
     CGFloat maskH = maskW;
     CGFloat maskX = (rect.size.width - maskW) * 0.5;
     CGFloat maskY = (rect.size.height - maskH) * 0.5;

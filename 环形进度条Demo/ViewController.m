@@ -34,11 +34,15 @@
     UIColor *backColor=[UIColor colorWithRed:41/255.0f green:0/255.0f blue:181/255.0f alpha:0.15f];
     //底色的圆圈
     FGGCircleProgressView *backProgressView=[[FGGCircleProgressView alloc]initWithFrame:frame andProgressColor:backColor];
+    //设置进度环底衬宽度为2
+    backProgressView.circleWidth=2.0;
     backProgressView.progress=1.0;
     [self.view addSubview:backProgressView];
     
     //进度圆弧
     FGGCircleProgressView *progressView=[[FGGCircleProgressView alloc] initWithFrame:frame andProgressColor:[UIColor redColor]];
+    //进度环的宽度
+    progressView.circleWidth=2.0;
     progressView.progress=progress;
     [self.view addSubview:progressView];
     

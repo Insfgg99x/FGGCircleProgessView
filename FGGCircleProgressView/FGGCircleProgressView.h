@@ -10,8 +10,12 @@
 
 @interface FGGCircleProgressView : UIView
 
+//进度
 @property (nonatomic, assign) CGFloat progress;
+//进度颜色
 @property (nonatomic,strong)UIColor *progressColor;
+//进度环宽度
+@property(nonatomic,assign)CGFloat circleWidth;
 
 - (id)initWithFrame:(CGRect)frame andProgressColor:(UIColor *)progressColor;
 
